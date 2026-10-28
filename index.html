@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 Simple Ways to Extend Your E-bike Battery Life</title>
+<meta name="description" content="Seven simple ways to extend your ebike battery life: smart charging, the right charger, temperature, storage, riding habits, bike care and less weight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F1F8; --surface:#FFFFFF; --ink:#1E1528; --muted:#4F4360; --line:#C9BAD8;
+  --accent:#D9480F; --accent-soft:#FFE3D3;
+  --warn:#7A4A00; --warn-soft:#FFE9A8;
+  --ok:#5B2FC2; --ok-soft:#E3D8FA;
+  --bad:#A10F38; --bad-soft:#FADBE4;
+  --hero:#241833;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#150E1D; --surface:#221830; --ink:#F7F0FB; --muted:#CDBFDC; --line:#4D3B66;
+    --accent:#FF8A57; --accent-soft:#44261A;
+    --warn:#FFD070; --warn-soft:#42320C;
+    --ok:#C4A8FF; --ok-soft:#33245A;
+    --bad:#FF8DAA; --bad-soft:#4D1A2E;
+    --hero:#0E0915;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);font-weight:600}
+a.brand{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+a.brand:hover{background:var(--accent-soft)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.12;letter-spacing:-.02em;margin:0}
+
+/* Hero */
+.hero{background:var(--hero);color:#fff;padding:4.5rem 1.25rem 5.5rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -55% auto;width:42rem;height:42rem;border-radius:50%;
+  border:2px solid rgba(255,138,87,.4);box-shadow:0 0 0 3rem rgba(255,138,87,.08),0 0 0 6rem rgba(255,138,87,.04)}
+.wrap{max-width:68rem;margin:0 auto;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800;max-width:16ch;color:#fff}
+.hero p{max-width:40rem;color:#EADFF4;font-size:1.2rem;margin:1.25rem 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
+.tags span{border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:.3rem .9rem;font-size:.92rem;color:#fff}
+
+/* Layout */
+.layout{max-width:68rem;margin:0 auto;padding:0 1.25rem;display:grid;grid-template-columns:14rem minmax(0,1fr);gap:3rem}
+nav.toc{position:sticky;top:1.5rem;z-index:2;align-self:start;margin-top:-2.5rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:1rem .5rem;font-size:.95rem;max-height:calc(100vh - 3rem);overflow:auto}
+nav.toc strong{display:block;padding:.2rem .9rem .6rem;font-family:var(--display);color:var(--ink)}
+nav.toc a{display:block;padding:.35rem .9rem;text-decoration:none;font-weight:500;color:var(--muted);border-left:3px solid transparent;border-radius:0 8px 8px 0}
+nav.toc a:hover,nav.toc a.on{color:var(--ink);font-weight:600;border-left-color:var(--accent);background:var(--accent-soft)}
+main{padding:3rem 0 5rem;max-width:44rem;min-width:0}
+section{margin-bottom:3.5rem}
+h2{font-size:clamp(1.65rem,3.4vw,2.2rem);font-weight:800;margin-bottom:1rem}
+p{margin:0 0 1rem}
+.lead{font-size:1.2rem;color:var(--muted)}
+
+/* Numbered tips */
+.step h2{display:flex;align-items:center;gap:.9rem}
+.step h2 b{flex:none;display:grid;place-items:center;width:3rem;height:3rem;border-radius:12px;background:var(--accent-soft);border:2px solid var(--accent);color:var(--accent);font-size:1.5rem}
+
+/* Lists */
+ul.check{list-style:none;padding:0;margin:0 0 1rem;display:grid;gap:.5rem}
+ul.check li{position:relative;padding:.7rem 1rem .7rem 2.9rem;background:var(--surface);border:2px solid var(--line);border-radius:12px}
+ul.check li::before{content:"✓";position:absolute;left:.85rem;top:.6rem;width:1.6rem;height:1.6rem;border-radius:50%;
+  display:grid;place-items:center;background:var(--ok);color:var(--surface);font-weight:800;font-size:.9rem}
+ul.warn li::before{content:"!";background:var(--warn);color:var(--surface)}
+ul.bad li::before{content:"✕";background:var(--bad);color:var(--surface)}
+ul.bad li strong{color:var(--bad)}
+
+.callout{border:2px solid var(--bad);border-left-width:8px;background:var(--bad-soft);border-radius:12px;padding:1rem 1.25rem;margin:1.25rem 0;color:var(--ink)}
+.callout.tip{border-color:var(--accent);background:var(--accent-soft)}
+.callout.note{border-color:var(--warn);background:var(--warn-soft)}
+.callout p{margin:0}
+
+.end{background:var(--hero);color:#fff;border-radius:22px;padding:2rem}
+.end h2{color:#fff}
+.end p{color:#EADFF4}
+.end p:last-child{margin:0}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 3rem}
+
+@media (max-width:60rem){
+  .layout{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;margin:-2rem 0 0;max-height:none}
+  nav.toc div{display:flex;flex-wrap:wrap}
+  nav.toc a{border-left:0;border-radius:99px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>7 Simple Ways to Extend Your E-bike Battery Life</h1>
+    <p>The battery is the most expensive part of your ebike. Small daily habits decide how long it lasts.</p>
+    <div class="tags"><span>Charge smart</span><span>Avoid heat</span><span>Ride efficiently</span></div>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="toc" aria-label="Table of contents">
+  <strong>In this guide</strong>
+  <div>
+    <a href="#how">How batteries work</a>
+    <a href="#t1">1. Avoid full drains</a>
+    <a href="#t2">2. Use the original charger</a>
+    <a href="#t3">3. Avoid extreme temperatures</a>
+    <a href="#t4">4. Store it properly</a>
+    <a href="#t5">5. Ride smarter</a>
+    <a href="#t6">6. Keep your bike in shape</a>
+    <a href="#t7">7. Reduce extra weight</a>
+    <a href="#choosing">Battery-friendly bikes</a>
+    <a href="#mistakes">Common mistakes</a>
+  </div>
+</nav>
+
+<main>
+  <section>
+    <p class="lead">Good care improves both its lifespan and the range you get from each charge. The best part is that most tips are free and easy to follow.</p>
+    <p>This guide covers seven simple ways to get more from your battery. Each one takes little effort but makes a real difference over time.</p>
+  </section>
+
+  <section id="how">
+    <h2>How e-bike batteries work</h2>
+    <p>Most ebikes use lithium-ion batteries. These batteries age over time. Charge cycles, heat, and poor storage all speed up the wear.</p>
+    <p>A typical battery lasts several hundred to a thousand or more full charge cycles. With good care, you can reach the higher end of that range. Poor habits can cut it short by years.</p>
+  </section>
+
+  <section id="t1" class="step">
+    <h2><b aria-hidden="true">1</b>Avoid full drains and constant full charges</h2>
+    <p>Lithium-ion cells prefer a middle charge level. Draining the battery to zero puts stress on the cells. Charging to 100% every day adds stress too.</p>
+    <p>Recharge when the battery drops to about 20%. For daily rides, unplug it at 80% to 90% when possible. Charge to 100% only before a long trip.</p>
+    <div class="callout tip"><p><strong>This simple habit can add months or even years to battery life.</strong></p></div>
+  </section>
+
+  <section id="t2" class="step">
+    <h2><b aria-hidden="true">2</b>Use the original charger</h2>
+    <p>The charger that came with your bike is matched to your battery. A wrong charger can overheat the cells or overcharge them. Cheap chargers also lack proper safety features.</p>
+    <p>Do not leave the battery plugged in for days. Unplug it once it is full. Charge on a hard, dry surface and keep it away from flammable items such as paper or fabric.</p>
+  </section>
+
+  <section id="t3" class="step">
+    <h2><b aria-hidden="true">3</b>Keep the battery away from extreme temperatures</h2>
+    <p>Heat is the biggest enemy of battery health. Never leave your battery in a parked car or in direct sun. High temperatures break down the cells faster.</p>
+    <p>Cold weather reduces range. It also makes charging less safe. In winter, store the battery indoors and carry it inside after each ride. Let it reach room temperature before you plug it in.</p>
+  </section>
+
+  <section id="t4" class="step">
+    <h2><b aria-hidden="true">4</b>Store it properly</h2>
+    <p>If you will not ride for a few weeks, store the battery with care. Keep it at 40% to 60% charge. A full or empty battery loses capacity faster during storage.</p>
+    <p>Choose a cool, dry place. Avoid damp garages and sunny windowsills. Check the charge every month or two. Top it up if it has dropped too low.</p>
+  </section>
+
+  <section id="t5" class="step">
+    <h2><b aria-hidden="true">5</b>Ride smarter with pedal assist</h2>
+    <p>How you ride affects how fast the battery drains. Small changes add up over a full trip.</p>
+    <ul class="check">
+      <li>Use lower assist levels on flat ground.</li>
+      <li>Shift to an easier gear before climbs and stops.</li>
+      <li>Pedal harder on hills instead of relying on the motor alone.</li>
+      <li>Avoid sudden, hard acceleration.</li>
+    </ul>
+    <p>Smooth riding lets the motor work less. This saves energy and reduces heat in the battery.</p>
+  </section>
+
+  <section id="t6" class="step">
+    <h2><b aria-hidden="true">6</b>Keep tires inflated and the bike in good shape</h2>
+    <p>A well-kept bike uses less power. Soft tires create more rolling resistance. The motor must work harder to move the same weight.</p>
+    <p>Check your tire pressure every week. Keep the chain clean and lubricated. Make sure the brakes do not rub against the rotors. Even small drag can reduce your range.</p>
+    <p>Motor power also changes how quickly a battery drains. Users who want to learn more about how motor strength affects performance should refer to the article: <a href="https://voltvoguebike.vercel.app/">Choose the right e-bike motor power</a>.</p>
+  </section>
+
+  <section id="t7" class="step">
+    <h2><b aria-hidden="true">7</b>Reduce extra weight</h2>
+    <p>Every extra pound makes the motor work harder. Take out items you do not need. Pack light for daily rides.</p>
+    <p>Remove heavy accessories you rarely use. Carry only the tools and water you need. A lighter load means less effort from the motor and more distance from each charge.</p>
+  </section>
+
+  <section id="choosing">
+    <h2>Choosing a battery-friendly e-bike</h2>
+    <p>Your bike also plays a role in battery life. When buying, look for these features:</p>
+    <ul class="check">
+      <li>Quality battery cells from a trusted maker</li>
+      <li>A built-in battery management system (BMS)</li>
+      <li>A removable battery for easy charging and storage</li>
+      <li>A clear capacity rating in watt-hours (Wh)</li>
+    </ul>
+    <p>A BMS protects the battery from overcharging, overheating, and deep drains. A higher Wh rating gives you more range, but it also adds weight.</p>
+    <div class="callout tip"><p>Models from <a class="brand" href="https://voltvoguebike.com/" target="_blank" rel="noopener">VoltVogue</a> typically list battery capacity, cell type, and charging details clearly, which helps buyers judge range and lifespan.</p></div>
+  </section>
+
+  <section id="mistakes">
+    <h2>Common battery mistakes to avoid</h2>
+    <ul class="check bad">
+      <li><strong>Leaving the battery empty for weeks:</strong> Deep discharge can damage the cells permanently.</li>
+      <li><strong>Charging in freezing or very hot conditions:</strong> Extreme temperatures harm the battery.</li>
+      <li><strong>Using cheap, unbranded chargers:</strong> They can overheat and create safety risks.</li>
+      <li><strong>Leaving it on the charger for days:</strong> It adds unnecessary stress.</li>
+      <li><strong>Ignoring warning signs:</strong> Swelling, unusual heat, or sudden range loss mean the battery needs a check.</li>
+    </ul>
+    <div class="callout"><p><strong>If you notice any of these signs, stop using the battery.</strong> Have a qualified technician inspect it.</p></div>
+  </section>
+
+  <section class="end">
+    <h2>Conclusion</h2>
+    <p>Battery care is simple when you build the right habits. Charge smart, store it well, avoid heat, and ride efficiently. These seven tips protect your investment and keep your ebike ready for every ride.</p>
+    <p>Start with one or two changes this week. Add the rest over time. Small habits repeated often make the biggest difference.</p>
+  </section>
+</main>
+</div>
+
+<footer>7 Simple Ways to Extend Your E-bike Battery Life</footer>
+
+<script>
+// Highlight the current section in the table of contents
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
